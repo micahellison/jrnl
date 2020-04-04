@@ -7,16 +7,17 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
   <meta name="author" content="Manuel Ebert">
+  
   <link rel="shortcut icon" href="../img/favicon.ico">
   <title>Recipes - jrnl</title>
-  <link href='https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700' rel='stylesheet' type='text/css'>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700" />
 
-  <link rel="stylesheet" href="../css/theme.css" type="text/css" />
-  <link rel="stylesheet" href="../css/theme_extra.css" type="text/css" />
-  <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/github.min.css">
-  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,600" rel="stylesheet">
-  <link href="../assets/theme.css" rel="stylesheet">
-  <link href="../assets/highlight.css" rel="stylesheet">
+  <link rel="stylesheet" href="../css/theme.css" />
+  <link rel="stylesheet" href="../css/theme_extra.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/github.min.css" />
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,600" rel="stylesheet" />
+  <link href="../assets/theme.css" rel="stylesheet" />
+  <link href="../assets/highlight.css" rel="stylesheet" />
   
   <script>
     // Current page data
@@ -27,7 +28,7 @@
   
   <script src="../js/jquery-2.1.1.min.js" defer></script>
   <script src="../js/modernizr-2.8.3.min.js" defer></script>
-  <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
   <script>hljs.initHighlightingOnLoad();</script> 
   
 </head>
@@ -38,6 +39,7 @@
 
     
     <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+    <div class="wy-side-scroll">
       <div class="wy-side-nav-search">
         <a href=".." class="icon icon-home"> jrnl</a>
         <div role="search">
@@ -48,61 +50,76 @@
       </div>
 
       <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
-	<ul class="current">
-	  
-          
-            <li class="toctree-l1">
-		
-    <a class="" href="../overview/">Overview</a>
-	    </li>
-          
-            <li class="toctree-l1">
-		
-    <a class="" href="../installation/">Quickstart</a>
-	    </li>
-          
-            <li class="toctree-l1">
-		
-    <a class="" href="../usage/">Basic Usage</a>
-	    </li>
-          
-            <li class="toctree-l1">
-		
-    <a class="" href="../encryption/">Encryption</a>
-	    </li>
-          
-            <li class="toctree-l1">
-		
-    <a class="" href="../export/">Import and Export</a>
-	    </li>
-          
-            <li class="toctree-l1">
-		
-    <a class="" href="../advanced/">Advanced Usage</a>
-	    </li>
-          
-            <li class="toctree-l1 current">
-		
-    <a class="current" href="./">Recipes</a>
-    <ul class="subnav">
-            
-    <li class="toctree-l2"><a href="#faq">FAQ</a></li>
-    
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../overview/">Overview</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../installation/">Quickstart</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../usage/">Basic Usage</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../encryption/">Encryption</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../export/">Import and Export</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../advanced/">Advanced Usage</a>
+                    </li>
+                </ul>
+                <ul class="current">
+                    <li class="toctree-l1 current"><a class="reference internal current" href="./">Recipes</a>
+    <ul class="current">
+    <li class="toctree-l2"><a class="reference internal" href="#recipes">Recipes</a>
         <ul>
-        
-            <li><a class="toctree-l3" href="#recipes">Recipes</a></li>
-        
-            <li><a class="toctree-l3" href="#external-editors">External editors</a></li>
-        
+    <li class="toctree-l3"><a class="reference internal" href="#co-occurrence-of-tags">Co-occurrence of tags</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#combining-filters">Combining filters</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#statistics">Statistics</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#importing-older-files">Importing older files</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#using-templates">Using templates</a>
+        <ul>
+    <li class="toctree-l4"><a class="reference internal" href="#1-command-line-arguments">1. Command line arguments</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#2-include-the-template-file-in-jrnlyaml">2. Include the template file in jrnl.yaml</a>
+    </li>
         </ul>
-    
-
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#prompts-on-shell-reload">Prompts on shell reload</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#display-random-entry">Display random entry</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#external-editors">External editors</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#sublime-text">Sublime Text</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#macvim">MacVim</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#ia-writer">iA Writer</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#notepad-on-windows">Notepad++ on Windows</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#visual-studio-code">Visual Studio Code</a>
+    </li>
+        </ul>
+    </li>
     </ul>
-	    </li>
-          
-        </ul>
+                    </li>
+                </ul>
       </div>
-      &nbsp;
+    </div>
     </nav>
 
     <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
@@ -130,6 +147,7 @@
       
     </li>
   </ul>
+  
   <hr/>
 </div>
           <div role="main">
@@ -185,15 +203,49 @@ If you do that often, consider creating a function in your <code>.bashrc</code> 
 </code></pre>
 
 <h3 id="using-templates">Using templates</h3>
-<p>Say you always want to use the same template for creating new entries.
-If you have an <a href="../advanced">external editor</a> set up, you can use this:</p>
-<pre><code class="sh">jrnl &lt; my_template.txt
-jrnl -1 --edit
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Templates require an <a href="../advanced/">external editor</a> be configured. </p>
+</div>
+<p>A template is a code snippet that makes it easier to enter use repeated text 
+each time a new journal entry is started. There are two ways you can utilize
+templates in your entries.  </p>
+<h4 id="1-command-line-arguments">1. Command line arguments</h4>
+<p>If you had a <code>template.txt</code> file with the following contents:</p>
+<pre><code class="sh">My Personal Journal
+Title: 
+
+Body:
 </code></pre>
 
-<p>Another nice solution that allows you to define individual prompts comes
-from <a href="https://github.com/maebert/jrnl/issues/194#issuecomment-47402869">Jacobo de
-Vera</a>:</p>
+<p>The <code>template.txt</code> file could be used to create a new entry with these 
+command line arguements:</p>
+<pre><code class="sh">jrnl &lt; template.txt     # Imports template.txt as the most recent entry
+jrnl -1 --edit          # Opens the most recent entry in the editor 
+</code></pre>
+
+<h4 id="2-include-the-template-file-in-jrnlyaml">2. Include the template file in <code>jrnl.yaml</code></h4>
+<p>A more efficient way to work with a template file is to declare the file
+in your config file by changing the <code>template</code> setting from <code>false</code> to the
+template file's path in double quotes:</p>
+<pre><code class="sh">...
+template: &quot;/path/to/template.txt&quot;
+...
+</code></pre>
+
+<p>Changes can be saved as you continue writing the journal entry and will be
+logged as a new entry in the journal you specified in the original argument.</p>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p>To read your journal entry or to verify the entry saved, you can use this 
+command: <code>jrnl -n 1</code> (Check out <a href="../export/">Import and Export</a> for more export options).</p>
+</div>
+<pre><code class="sh">jrnl -n 1
+</code></pre>
+
+<h3 id="prompts-on-shell-reload">Prompts on shell reload</h3>
+<p>If you'd like to be prompted each time you refresh your shell, you can include
+this in your <code>.bash_profile</code>:</p>
 <pre><code class="sh">function log_question()
 {
    echo $1
@@ -204,6 +256,10 @@ log_question 'What did I achieve today?'
 log_question 'What did I make progress with?'
 </code></pre>
 
+<p>Whenever your shell is reloaded, you will be prompted to answer each of the 
+questions in the example above. Each answer will be logged as a separate 
+journal entry at the <code>default_hour</code> and <code>default_minute</code> listed in your 
+<code>jrnl.yaml</code> <a href="../advanced/#configuration-file">config file</a>.</p>
 <h3 id="display-random-entry">Display random entry</h3>
 <p>You can use this to select one title at random and then display the whole
 entry. The invocation of <code>cut</code> needs to match the format of the timestamp.
@@ -214,10 +270,12 @@ only field 1.</p>
 </code></pre>
 
 <h2 id="external-editors">External editors</h2>
-<p>To use external editors for writing and editing journal entries, set
-them up in your <code>jrnl.yaml</code> (see <code>advanced usage &lt;advanced&gt;</code> for
-details). Generally, after writing an entry, you will have to save and
-close the file to save the changes to jrnl.</p>
+<p>Configure your preferred external editor by updating the <code>editor</code> option 
+in your <code>jrnl.yaml</code> file. (See <a href="../advanced/">advanced usage</a> for details). </p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>To save and log any entry edits, save and close the file.</p>
+</div>
 <h3 id="sublime-text">Sublime Text</h3>
 <p>To use Sublime Text, install the command line tools for Sublime Text and
 configure your <code>jrnl.yaml</code> like this:</p>
@@ -295,7 +353,7 @@ its own Notepad++ window.</p>
     
   </div>
 
-  Built with <a href="http://www.mkdocs.org">MkDocs</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+  Built with <a href="https://www.mkdocs.org/">MkDocs</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
 </footer>
       
         </div>
@@ -305,7 +363,7 @@ its own Notepad++ window.</p>
 
   </div>
 
-  <div class="rst-versions" role="note" style="cursor: pointer">
+  <div class="rst-versions" role="note" aria-label="versions">
     <span class="rst-current-version" data-toggle="rst-current-version">
       
           <a href="https://github.com/jrnl-org/jrnl/" class="fa fa-github" style="float: left; color: #fcfcfc"> GitHub</a>
@@ -319,6 +377,11 @@ its own Notepad++ window.</p>
     <script>var base_url = '..';</script>
     <script src="../js/theme.js" defer></script>
       <script src="../search/main.js" defer></script>
+    <script defer>
+        window.onload = function () {
+            SphinxRtdTheme.Navigation.enable(true);
+        };
+    </script>
 
 </body>
 </html>
