@@ -1,31 +1,35 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"><url>
-     <loc>None</loc>
-     <lastmod>2020-04-04</lastmod>
+     <loc>https://jrnl.sh/overview/</loc>
+     <lastmod>2020-11-14</lastmod>
      <changefreq>daily</changefreq>
     </url><url>
-     <loc>None</loc>
-     <lastmod>2020-04-04</lastmod>
+     <loc>https://jrnl.sh/installation/</loc>
+     <lastmod>2020-11-14</lastmod>
      <changefreq>daily</changefreq>
     </url><url>
-     <loc>None</loc>
-     <lastmod>2020-04-04</lastmod>
+     <loc>https://jrnl.sh/usage/</loc>
+     <lastmod>2020-11-14</lastmod>
      <changefreq>daily</changefreq>
     </url><url>
-     <loc>None</loc>
-     <lastmod>2020-04-04</lastmod>
+     <loc>https://jrnl.sh/encryption/</loc>
+     <lastmod>2020-11-14</lastmod>
      <changefreq>daily</changefreq>
     </url><url>
-     <loc>None</loc>
-     <lastmod>2020-04-04</lastmod>
+     <loc>https://jrnl.sh/privacy-and-security/</loc>
+     <lastmod>2020-11-14</lastmod>
      <changefreq>daily</changefreq>
     </url><url>
-     <loc>None</loc>
-     <lastmod>2020-04-04</lastmod>
+     <loc>https://jrnl.sh/formats/</loc>
+     <lastmod>2020-11-14</lastmod>
      <changefreq>daily</changefreq>
     </url><url>
-     <loc>None</loc>
-     <lastmod>2020-04-04</lastmod>
+     <loc>https://jrnl.sh/advanced/</loc>
+     <lastmod>2020-11-14</lastmod>
+     <changefreq>daily</changefreq>
+    </url><url>
+     <loc>https://jrnl.sh/recipes/</loc>
+     <lastmod>2020-11-14</lastmod>
      <changefreq>daily</changefreq>
     </url>
 </urlset>

@@ -7,7 +7,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
   <meta name="author" content="Manuel Ebert">
-  
+  <link rel="canonical" href="https://jrnl.sh/advanced/">
   <link rel="shortcut icon" href="../img/favicon.ico">
   <title>Advanced Usage - jrnl</title>
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700" />
@@ -23,7 +23,7 @@
     // Current page data
     var mkdocs_page_name = "Advanced Usage";
     var mkdocs_page_input_path = "advanced.md";
-    var mkdocs_page_url = null;
+    var mkdocs_page_url = "/advanced/";
   </script>
   
   <script src="../js/jquery-2.1.1.min.js" defer></script>
@@ -67,7 +67,11 @@
                     </li>
                 </ul>
                 <ul>
-                    <li class="toctree-l1"><a class="reference internal" href="../export/">Import and Export</a>
+                    <li class="toctree-l1"><a class="reference internal" href="../privacy-and-security/">Privacy and Security</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../formats/">Formats</a>
                     </li>
                 </ul>
                 <ul class="current">
@@ -114,7 +118,7 @@
     <li>Advanced Usage</li>
     <li class="wy-breadcrumbs-aside">
       
-        <a href="https://github.com/jrnl-org/jrnl/edit/master/docs/advanced.md"
+        <a href="https://github.com/jrnl-org/jrnl/edit/develop/docs/advanced.md"
           class="icon icon-github"> Edit on GitHub</a>
       
     </li>
@@ -139,8 +143,8 @@ variable set, the configuration file will be saved as
 and can be edited with a plain text editor.</p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
-<p>Backup your config file before editing. Changes to the config file
-have destructive effects on your journal!</p>
+<p>Backup your journal and config file before editing. Changes to the config file
+can have destructive effects on your journal!</p>
 </div>
 <ul>
 <li><code>journals</code>
@@ -163,7 +167,10 @@ have destructive effects on your journal!</p>
 <li><code>linewrap</code>
     controls the width of the output. Set to <code>false</code> if you don't want to wrap long lines.</li>
 <li><code>colors</code>
-    dictionary that controls the colors used to display journal entries. It has two subkeys, which are: <code>date</code> and <code>title</code>. Current valid values are: <code>BLACK</code>, <code>RED</code>, <code>GREEN</code>, <code>YELLOW</code>, <code>BLUE</code>, <code>MAGENTA</code>, <code>CYAN</code>, and <code>WHITE</code>. <code>colorama.Fore</code> is used for colorization, and you can find the <a href="https://github.com/tartley/colorama#colored-output">docs here</a>. To disable colored output, set the value to <code>NONE</code>. If you set the value of any color subkey to an invalid color, no color will be used.</li>
+    dictionary that controls the colors used to display journal entries. It has four subkeys, which are: <code>body</code>, <code>date</code>, <code>tags</code>, and <code>title</code>. Current valid values are: <code>BLACK</code>, <code>RED</code>, <code>GREEN</code>, <code>YELLOW</code>, <code>BLUE</code>, <code>MAGENTA</code>, <code>CYAN</code>, <code>WHITE</code>, and <code>NONE</code>. <code>colorama.Fore</code> is used for colorization, and you can find the <a href="https://github.com/tartley/colorama#colored-output">docs here</a>. To disable colored output, set the value to <code>NONE</code>. If you set the value of any color subkey to an invalid color, no color will be used.</li>
+<li><code>display_format</code>
+    specifies formatter to use, formatters available are: 
+    <code>boxed</code>, <code>fancy</code>, <code>json</code>, <code>markdown</code>, <code>md</code>, <code>tags</code>, <code>text</code>, <code>txt</code>, <code>xml</code>, or <code>yaml</code>.</li>
 </ul>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
@@ -187,31 +194,28 @@ you type</p>
 <p>You can configure <code>jrnl</code>to use with multiple journals (eg.
 <code>private</code> and <code>work</code>) by defining more journals in your <code>jrnl.yaml</code>,
 for example:</p>
-<pre><code class="yaml">journals:
-  default: ~/journal.txt
-  work: ~/work.txt
+<pre><code class="language-yaml">journals:
+  default: ~\journal.txt
+  work: ~\work.txt
 </code></pre>
-
 <p>The <code>default</code> journal gets created the first time you start <code>jrnl</code>
 Now you can access the <code>work</code> journal by using <code>jrnl work</code> instead of
 <code>jrnl</code>, eg.</p>
-<pre><code class="sh">jrnl work at 10am: Meeting with @Steve
+<pre><code class="language-sh">jrnl work at 10am: Meeting with @Steve
 jrnl work -n 3
 </code></pre>
-
 <p>will both use <code>~/work.txt</code>, while <code>jrnl -n 3</code> will display the last
 three entries from <code>~/journal.txt</code> (and so does <code>jrnl default -n 3</code>).</p>
 <p>You can also override the default options for each individual journal.
 If your <code>jrnl.yaml</code> looks like this:</p>
-<pre><code class="yaml">encrypt: false
+<pre><code class="language-yaml">encrypt: false
 journals:
-  default: ~/journal.txt
-  work:
-    journal: ~/work.txt
-    encrypt: true
-  food: ~/my_recipes.txt
+default: ~/journal.txt
+work:
+  journal: ~/work.txt
+  encrypt: true
+food: ~/my_recipes.txt
 </code></pre>
-
 <p>Your <code>default</code> and your <code>food</code> journals won't be encrypted, however your
 <code>work</code> journal will! You can override all options that are present at
 the top level of <code>jrnl.yaml</code>, just make sure that at the very least
@@ -240,7 +244,7 @@ To use non-ascii characters, first tweak Python to recognize the encoding by add
         <a href="../recipes/" class="btn btn-neutral float-right" title="Recipes">Next <span class="icon icon-circle-arrow-right"></span></a>
       
       
-        <a href="../export/" class="btn btn-neutral" title="Import and Export"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+        <a href="../formats/" class="btn btn-neutral" title="Formats"><span class="icon icon-circle-arrow-left"></span> Previous</a>
       
     </div>
   
@@ -268,7 +272,7 @@ To use non-ascii characters, first tweak Python to recognize the encoding by add
           <a href="https://github.com/jrnl-org/jrnl/" class="fa fa-github" style="float: left; color: #fcfcfc"> GitHub</a>
       
       
-        <span><a href="../export/" style="color: #fcfcfc;">&laquo; Previous</a></span>
+        <span><a href="../formats/" style="color: #fcfcfc;">&laquo; Previous</a></span>
       
       
         <span style="margin-left: 15px"><a href="../recipes/" style="color: #fcfcfc">Next &raquo;</a></span>

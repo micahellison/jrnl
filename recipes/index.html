@@ -7,7 +7,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
   <meta name="author" content="Manuel Ebert">
-  
+  <link rel="canonical" href="https://jrnl.sh/recipes/">
   <link rel="shortcut icon" href="../img/favicon.ico">
   <title>Recipes - jrnl</title>
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700" />
@@ -23,7 +23,7 @@
     // Current page data
     var mkdocs_page_name = "Recipes";
     var mkdocs_page_input_path = "recipes.md";
-    var mkdocs_page_url = null;
+    var mkdocs_page_url = "/recipes/";
   </script>
   
   <script src="../js/jquery-2.1.1.min.js" defer></script>
@@ -67,7 +67,11 @@
                     </li>
                 </ul>
                 <ul>
-                    <li class="toctree-l1"><a class="reference internal" href="../export/">Import and Export</a>
+                    <li class="toctree-l1"><a class="reference internal" href="../privacy-and-security/">Privacy and Security</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../formats/">Formats</a>
                     </li>
                 </ul>
                 <ul>
@@ -142,7 +146,7 @@
     <li>Recipes</li>
     <li class="wy-breadcrumbs-aside">
       
-        <a href="https://github.com/jrnl-org/jrnl/edit/master/docs/recipes.md"
+        <a href="https://github.com/jrnl-org/jrnl/edit/develop/docs/recipes.md"
           class="icon icon-github"> Edit on GitHub</a>
       
     </li>
@@ -158,9 +162,8 @@
 <h3 id="co-occurrence-of-tags">Co-occurrence of tags</h3>
 <p>If I want to find out how often I mentioned my flatmates Alberto and
 Melo in the same entry, I run</p>
-<pre><code class="sh">jrnl @alberto --tags | grep @melo
+<pre><code class="language-sh">jrnl @alberto --tags | grep @melo
 </code></pre>
-
 <p>And will get something like <code>@melo: 9</code>, meaning there are 9 entries
 where both <code>@alberto</code> and <code>@melo</code> are tagged. How does this work? First,
 <code>jrnl @alberto</code> will filter the journal to only entries containing the
@@ -169,84 +172,75 @@ each tag occurred in this filtered journal. Finally, we pipe this to
 <code>grep</code> which will only display the line containing <code>@melo</code>.</p>
 <h3 id="combining-filters">Combining filters</h3>
 <p>You can do things like</p>
-<pre><code class="sh">jrnl @fixed -starred -n 10 -until &quot;jan 2013&quot; --short
+<pre><code class="language-sh">jrnl @fixed -starred -n 10 -to &quot;jan 2013&quot; --short
 </code></pre>
-
 <p>To get a short summary of the 10 most recent, favourited entries before
 January 1, 2013 that are tagged with <code>@fixed</code>.</p>
 <h3 id="statistics">Statistics</h3>
 <p>How much did I write last year?</p>
-<pre><code class="sh">jrnl -from &quot;jan 1 2013&quot; -until &quot;dec 31 2013&quot; | wc -w
+<pre><code class="language-sh">jrnl -from &quot;jan 1 2013&quot; -to &quot;dec 31 2013&quot; | wc -w
 </code></pre>
-
 <p>Will give you the number of words you wrote in 2013. How long is my
 average entry?</p>
-<pre><code class="sh">expr $(jrnl --export text | wc -w) / $(jrnl --short | wc -l)
+<pre><code class="language-sh">expr $(jrnl --export text | wc -w) / $(jrnl --short | wc -l)
 </code></pre>
-
 <p>This will first get the total number of words in the journal and divide
 it by the number of entries (this works because <code>jrnl --short</code> will
 print exactly one line per entry).</p>
 <h3 id="importing-older-files">Importing older files</h3>
 <p>If you want to import a file as an entry to jrnl, you can just do <code>jrnl &lt; entry.ext</code>. But what if you want the modification date of the file to
 be the date of the entry in jrnl? Try this</p>
-<pre><code class="sh">echo `stat -f %Sm -t '%d %b %Y at %H:%M: ' entry.txt` `cat entry.txt` | jrnl
+<pre><code class="language-sh">echo `stat -f %Sm -t '%d %b %Y at %H:%M: ' entry.txt` `cat entry.txt` | jrnl
 </code></pre>
-
 <p>The first part will format the modification date of <code>entry.txt</code>, and
 then combine it with the contents of the file before piping it to jrnl.
 If you do that often, consider creating a function in your <code>.bashrc</code> or
 <code>.bash_profile</code></p>
-<pre><code class="sh">jrnlimport () {
+<pre><code class="language-sh">jrnlimport () {
   echo `stat -f %Sm -t '%d %b %Y at %H:%M: ' $1` `cat $1` | jrnl
 }
 </code></pre>
-
 <h3 id="using-templates">Using templates</h3>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <p>Templates require an <a href="../advanced/">external editor</a> be configured. </p>
 </div>
-<p>A template is a code snippet that makes it easier to enter use repeated text 
+<p>A template is a code snippet that makes it easier to use repeated text 
 each time a new journal entry is started. There are two ways you can utilize
 templates in your entries.  </p>
 <h4 id="1-command-line-arguments">1. Command line arguments</h4>
 <p>If you had a <code>template.txt</code> file with the following contents:</p>
-<pre><code class="sh">My Personal Journal
+<pre><code class="language-sh">My Personal Journal
 Title: 
 
 Body:
 </code></pre>
-
 <p>The <code>template.txt</code> file could be used to create a new entry with these 
 command line arguements:</p>
-<pre><code class="sh">jrnl &lt; template.txt     # Imports template.txt as the most recent entry
+<pre><code class="language-sh">jrnl &lt; template.txt     # Imports template.txt as the most recent entry
 jrnl -1 --edit          # Opens the most recent entry in the editor 
 </code></pre>
-
 <h4 id="2-include-the-template-file-in-jrnlyaml">2. Include the template file in <code>jrnl.yaml</code></h4>
 <p>A more efficient way to work with a template file is to declare the file
 in your config file by changing the <code>template</code> setting from <code>false</code> to the
 template file's path in double quotes:</p>
-<pre><code class="sh">...
+<pre><code class="language-sh">...
 template: &quot;/path/to/template.txt&quot;
 ...
 </code></pre>
-
 <p>Changes can be saved as you continue writing the journal entry and will be
 logged as a new entry in the journal you specified in the original argument.</p>
 <div class="admonition tip">
 <p class="admonition-title">Tip</p>
 <p>To read your journal entry or to verify the entry saved, you can use this 
-command: <code>jrnl -n 1</code> (Check out <a href="../export/">Import and Export</a> for more export options).</p>
+command: <code>jrnl -n 1</code> (Check out <a href="../formats/">Formats</a> for more options).</p>
 </div>
-<pre><code class="sh">jrnl -n 1
+<pre><code class="language-sh">jrnl -n 1
 </code></pre>
-
 <h3 id="prompts-on-shell-reload">Prompts on shell reload</h3>
 <p>If you'd like to be prompted each time you refresh your shell, you can include
 this in your <code>.bash_profile</code>:</p>
-<pre><code class="sh">function log_question()
+<pre><code class="language-sh">function log_question()
 {
    echo $1
    read
@@ -255,7 +249,6 @@ this in your <code>.bash_profile</code>:</p>
 log_question 'What did I achieve today?'
 log_question 'What did I make progress with?'
 </code></pre>
-
 <p>Whenever your shell is reloaded, you will be prompted to answer each of the 
 questions in the example above. Each answer will be logged as a separate 
 journal entry at the <code>default_hour</code> and <code>default_minute</code> listed in your 
@@ -266,9 +259,8 @@ entry. The invocation of <code>cut</code> needs to match the format of the times
 For timestamps that have a space between data and time components, select
 fields 1 and 2 as shown. For timestamps that have no whitespace, select
 only field 1.</p>
-<pre><code class="sh">jrnl -on &quot;$(jrnl --short | shuf -n 1 | cut -d' ' -f1,2)&quot;
+<pre><code class="language-sh">jrnl -on &quot;$(jrnl --short | shuf -n 1 | cut -d' ' -f1,2)&quot;
 </code></pre>
-
 <h2 id="external-editors">External editors</h2>
 <p>Configure your preferred external editor by updating the <code>editor</code> option 
 in your <code>jrnl.yaml</code> file. (See <a href="../advanced/">advanced usage</a> for details). </p>
@@ -279,25 +271,22 @@ in your <code>jrnl.yaml</code> file. (See <a href="../advanced/">advanced usage<
 <h3 id="sublime-text">Sublime Text</h3>
 <p>To use Sublime Text, install the command line tools for Sublime Text and
 configure your <code>jrnl.yaml</code> like this:</p>
-<pre><code class="yaml">editor: &quot;subl -w&quot;
+<pre><code class="language-yaml">editor: &quot;subl -w&quot;
 </code></pre>
-
 <p>Note the <code>-w</code> flag to make sure jrnl waits for Sublime Text to close the
 file before writing into the journal.</p>
 <h3 id="macvim">MacVim</h3>
 <p>Similar to Sublime Text, MacVim must be started with a flag that tells
 the the process to wait until the file is closed before passing control
 back to journal. In the case of MacVim, this is <code>-f</code>:</p>
-<pre><code class="yaml">editor: &quot;mvim -f&quot;
+<pre><code class="language-yaml">editor: &quot;mvim -f&quot;
 </code></pre>
-
 <h3 id="ia-writer">iA Writer</h3>
 <p>On OS X, you can use the fabulous <a href="http://www.iawriter.com/mac">iA
 Writer</a> to write entries. Configure your
 <code>jrnl.yaml</code> like this:</p>
-<pre><code class="yaml">editor: &quot;open -b pro.writer.mac -Wn&quot;
+<pre><code class="language-yaml">editor: &quot;open -b pro.writer.mac -Wn&quot;
 </code></pre>
-
 <p>What does this do? <code>open -b ...</code> opens a file using the application
 identified by the bundle identifier (a unique string for every app out
 there). <code>-Wn</code> tells the application to wait until it's closed before
@@ -305,33 +294,28 @@ passing back control, and to use a new instance of the application.</p>
 <p>If the <code>pro.writer.mac</code> bundle identifier is not found on your system,
 you can find the right string to use by inspecting iA Writer's
 <code>Info.plist</code> file in your shell:</p>
-<pre><code class="sh">grep -A 1 CFBundleIdentifier /Applications/iA\ Writer.app/Contents/Info.plist
+<pre><code class="language-sh">grep -A 1 CFBundleIdentifier /Applications/iA\ Writer.app/Contents/Info.plist
 </code></pre>
-
 <h3 id="notepad-on-windows">Notepad++ on Windows</h3>
 <p>To set <a href="http://notepad-plus-plus.org/">Notepad++</a> as your editor, edit
 the jrnl config file (<code>jrnl.yaml</code>) like this:</p>
-<pre><code class="yaml">editor: &quot;C:\\Program Files (x86)\\Notepad++\\notepad++.exe -multiInst -nosession&quot;
+<pre><code class="language-yaml">editor: &quot;C:\\Program Files (x86)\\Notepad++\\notepad++.exe -multiInst -nosession&quot;
 </code></pre>
-
 <p>The double backslashes are needed so jrnl can read the file path
 correctly. The <code>-multiInst -nosession</code> options will cause jrnl to open
 its own Notepad++ window.</p>
 <h3 id="visual-studio-code">Visual Studio Code</h3>
 <p>To set <a href="https://code.visualstudio.com">Visual Studo Code</a> as your editor on Linux, edit <code>jrnl.yaml</code> like this:</p>
-<pre><code class="yaml">editor: &quot;/usr/bin/code --wait&quot;
+<pre><code class="language-yaml">editor: &quot;/usr/bin/code --wait&quot;
 </code></pre>
-
 <p>The <code>--wait</code> argument tells VS Code to wait for files to be written out before handing back control to jrnl.</p>
 <p>On MacOS you will need to add VS Code to your PATH. You can do that by adding:</p>
-<pre><code class="sh">export PATH=&quot;\$PATH:/Applications/Visual Studio Code.app/Contents/Resources/app/bin&quot;
+<pre><code class="language-sh">export PATH=&quot;\$PATH:/Applications/Visual Studio Code.app/Contents/Resources/app/bin&quot;
 </code></pre>
-
 <p>to your <code>.bash_profile</code>, or by running the <strong>Install 'code' command in PATH</strong> command from the command pallet in VS Code.</p>
 <p>Then you can add:</p>
-<pre><code class="yaml">editor: &quot;code --wait&quot;
+<pre><code class="language-yaml">editor: &quot;code --wait&quot;
 </code></pre>
-
 <p>to <code>jrnl.yaml</code>. See also the <a href="https://code.visualstudio.com/docs/setup/mac">Visual Studio Code documentation</a></p>
               
             </div>

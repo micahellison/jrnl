@@ -7,7 +7,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
   <meta name="author" content="Manuel Ebert">
-  
+  <link rel="canonical" href="https://jrnl.sh/installation/">
   <link rel="shortcut icon" href="../img/favicon.ico">
   <title>Quickstart - jrnl</title>
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700" />
@@ -23,7 +23,7 @@
     // Current page data
     var mkdocs_page_name = "Quickstart";
     var mkdocs_page_input_path = "installation.md";
-    var mkdocs_page_url = null;
+    var mkdocs_page_url = "/installation/";
   </script>
   
   <script src="../js/jquery-2.1.1.min.js" defer></script>
@@ -73,7 +73,11 @@
                     </li>
                 </ul>
                 <ul>
-                    <li class="toctree-l1"><a class="reference internal" href="../export/">Import and Export</a>
+                    <li class="toctree-l1"><a class="reference internal" href="../privacy-and-security/">Privacy and Security</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../formats/">Formats</a>
                     </li>
                 </ul>
                 <ul>
@@ -108,7 +112,7 @@
     <li>Quickstart</li>
     <li class="wy-breadcrumbs-aside">
       
-        <a href="https://github.com/jrnl-org/jrnl/edit/master/docs/installation.md"
+        <a href="https://github.com/jrnl-org/jrnl/edit/develop/docs/installation.md"
           class="icon icon-github"> Edit on GitHub</a>
       
     </li>
@@ -121,32 +125,28 @@
               
                 <h1 id="getting-started">Getting started</h1>
 <h2 id="installation">Installation</h2>
-<p>On OS X, the easiest way to install <em>jrnl</em> is using
+<p>On Mac and Linux, the easiest way to install <code>jrnl</code> is using
 <a href="http://brew.sh/">Homebrew</a>:</p>
-<pre><code class="sh">brew install jrnl
+<pre><code class="language-sh">brew install jrnl
 </code></pre>
-
-<p>On other platforms, install <em>jrnl</em> using <a href="https://www.python.org/">Python</a> 3.6+ and <a href="https://pipxproject.github.io/pipx/">pipx</a>:</p>
-<pre><code class="sh">pipx install jrnl
+<p>On other platforms, install <code>jrnl</code> using <a href="https://www.python.org/">Python</a> 3.6+ and <a href="https://pipxproject.github.io/pipx/">pipx</a>:</p>
+<pre><code class="language-sh">pipx install jrnl
 </code></pre>
-
 <p>The first time you run <code>jrnl</code> you will be asked where your journal file
 should be created and whether you wish to encrypt it.</p>
 <h2 id="quickstart">Quickstart</h2>
 <p>To make a new entry, just type</p>
-<pre><code class="sh">jrnl yesterday: Called in sick. Used the time to clean the house and spent 4h on writing my book.
+<pre><code class="language-sh">jrnl yesterday: Called in sick. Used the time to clean the house and spent 4h on writing my book.
 </code></pre>
-
 <p>and hit return. <code>yesterday:</code> will be interpreted as a time stamp.
 Everything until the first sentence mark (<code>.?!:</code>) will be interpreted as
 the title, the rest as the body. In your journal file, the result will
 look like this:</p>
-<pre><code class="output">2012-03-29 09:00 Called in sick.
+<pre><code class="language-output">2012-03-29 09:00 Called in sick.
 Used the time to clean the house and spent 4h on writing my book.
 </code></pre>
-
 <p>If you just call <code>jrnl</code>, you will be prompted to compose your entry -
-but you can also configure <em>jrnl</em> to use your external editor.</p>
+but you can also <a href="../advanced/">configure</a> <em>jrnl</em> to use your external editor.</p>
               
             </div>
           </div>

@@ -7,7 +7,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
   <meta name="author" content="Manuel Ebert">
-  
+  <link rel="canonical" href="https://jrnl.sh/overview/">
   <link rel="shortcut icon" href="../img/favicon.ico">
   <title>Overview - jrnl</title>
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700" />
@@ -23,7 +23,7 @@
     // Current page data
     var mkdocs_page_name = "Overview";
     var mkdocs_page_input_path = "overview.md";
-    var mkdocs_page_url = null;
+    var mkdocs_page_url = "/overview/";
   </script>
   
   <script src="../js/jquery-2.1.1.min.js" defer></script>
@@ -53,9 +53,21 @@
                 <ul class="current">
                     <li class="toctree-l1 current"><a class="reference internal current" href="./">Overview</a>
     <ul class="current">
-    <li class="toctree-l2"><a class="reference internal" href="#what-is-jrnl">What is jrnl?</a>
+    <li class="toctree-l2"><a class="reference internal" href="#plain-text">Plain Text</a>
     </li>
-    <li class="toctree-l2"><a class="reference internal" href="#why-keep-a-journal">Why keep a journal?</a>
+    <li class="toctree-l2"><a class="reference internal" href="#tags">Tags</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#support-for-multiple-journals">Support for Multiple Journals</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#support-for-external-editors">Support for External Editors</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#encryption">Encryption</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#import-and-export">Import and Export</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#multi-platform-support">Multi-Platform Support</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#open-source">Open-Source</a>
     </li>
     </ul>
                     </li>
@@ -73,7 +85,11 @@
                     </li>
                 </ul>
                 <ul>
-                    <li class="toctree-l1"><a class="reference internal" href="../export/">Import and Export</a>
+                    <li class="toctree-l1"><a class="reference internal" href="../privacy-and-security/">Privacy and Security</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../formats/">Formats</a>
                     </li>
                 </ul>
                 <ul>
@@ -108,7 +124,7 @@
     <li>Overview</li>
     <li class="wy-breadcrumbs-aside">
       
-        <a href="https://github.com/jrnl-org/jrnl/edit/master/docs/overview.md"
+        <a href="https://github.com/jrnl-org/jrnl/edit/develop/docs/overview.md"
           class="icon icon-github"> Edit on GitHub</a>
       
     </li>
@@ -120,25 +136,45 @@
             <div class="section">
               
                 <h1 id="overview">Overview</h1>
-<h2 id="what-is-jrnl">What is jrnl?</h2>
-<p><code>jrnl</code> is a simple journal application for
-your command line. Journals are stored as human readable plain text
-files - you can put them into a Dropbox folder for instant syncing and
-you can be assured that your journal will still be readable in 2050,
-when all your fancy iPad journal applications will long be forgotten.</p>
-<p>Optionally, your journal can be encrypted using the <a href="http://en.wikipedia.org/wiki/Advanced_Encryption_Standard">256-bit
-AES</a>.</p>
-<h2 id="why-keep-a-journal">Why keep a journal?</h2>
-<p>Journals aren't just for people who have too much
-time on their summer vacation. A journal helps you to keep track of the
-things you get done and how you did them. Your imagination may be
-limitless, but your memory isn't.</p>
-<p>For personal use, make it a good habit to write at least 20 words a day.
-Just to reflect what made this day special, why you haven't wasted it.</p>
-<p>For professional use, consider a text-based journal to be the perfect
-complement to your GTD todo list - a documentation of what and how
-you've done it. Or use it as a quick way to keep a change log. Or use it
-to keep a lab book.</p>
+<p><code>jrnl</code> is a simple journal application for the command line.</p>
+<p>You can use it to easily create, search, and view journal entries. Journals are
+stored as human-readable plain text, and can also be encrypted using <a href="http://en.wikipedia.org/wiki/Advanced_Encryption_Standard">AES
+encryption</a>.</p>
+<p><code>jrnl</code> has most of the features you need, and few of the ones you don't.</p>
+<h2 id="plain-text">Plain Text</h2>
+<p><code>jrnl</code> stores each journal in plain text. You can store <code>jrnl</code> files anywhere,
+including in shared folders to keep them synchronized between devices. Journal
+files are compact (thousands of entries take up less than 1 MiB) and can be read
+by almost any electronic device, now and for the foreseeable future.</p>
+<h2 id="tags">Tags</h2>
+<p>To make it easier to find entries later, <code>jrnl</code> includes support for inline tags
+(the default tag symbol is <code>@</code>). You can find and filter entries by using tags
+along with other search criteria.</p>
+<h2 id="support-for-multiple-journals">Support for Multiple Journals</h2>
+<p><code>jrnl</code> includes support for the creation of multiple journals, each of which
+can be stored as a single file or as a set of files. Entries are automatically
+timestamped in a human-readable format that makes it easy to view multiple
+entries at a time. <code>jrnl</code> can easily find the entries you want so that you can
+read them or edit them.</p>
+<h2 id="support-for-external-editors">Support for External Editors</h2>
+<p><code>jrnl</code> plays nicely with your favorite text editor. You may prefer to write
+journal entries in an editor. Or you may want to make changes that require a
+more comprehensive application. <code>jrnl</code> can filter specific entries and pass them
+to the external editor of your choice.</p>
+<h2 id="encryption">Encryption</h2>
+<p><code>jrnl</code> includes support for <a href="http://en.wikipedia.org/wiki/Advanced_Encryption_Standard">AES
+encryption</a>. See the
+<a href="../encryption/">encryption page</a> for more information.</p>
+<h2 id="import-and-export">Import and Export</h2>
+<p><code>jrnl</code> makes it easy to import entries from other sources. Existing entries can
+be exported in a variety of <a href="../formats/">formats</a>.</p>
+<h2 id="multi-platform-support">Multi-Platform Support</h2>
+<p><code>jrnl</code> is compatible with most operating systems. You can <a href="../installation/">download</a> it using one
+of a variety of package managers, or you can build from source.</p>
+<h2 id="open-source">Open-Source</h2>
+<p><code>jrnl</code> is written in <a href="https://www.python.org">Python</a> and maintained by a
+<a href="https://github.com/jrnl-org/jrnl">friendly community</a> of open-source software
+enthusiasts.</p>
               
             </div>
           </div>

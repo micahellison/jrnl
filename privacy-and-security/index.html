@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <meta name="author" content="Manuel Ebert">
+  <link rel="canonical" href="https://jrnl.sh/privacy-and-security/">
+  <link rel="shortcut icon" href="../img/favicon.ico">
+  <title>Privacy and Security - jrnl</title>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700" />
+
+  <link rel="stylesheet" href="../css/theme.css" />
+  <link rel="stylesheet" href="../css/theme_extra.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/github.min.css" />
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,600" rel="stylesheet" />
+  <link href="../assets/theme.css" rel="stylesheet" />
+  <link href="../assets/highlight.css" rel="stylesheet" />
+  
+  <script>
+    // Current page data
+    var mkdocs_page_name = "Privacy and Security";
+    var mkdocs_page_input_path = "privacy-and-security.md";
+    var mkdocs_page_url = "/privacy-and-security/";
+  </script>
+  
+  <script src="../js/jquery-2.1.1.min.js" defer></script>
+  <script src="../js/modernizr-2.8.3.min.js" defer></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+  <script>hljs.initHighlightingOnLoad();</script> 
+  
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+    <div class="wy-side-scroll">
+      <div class="wy-side-nav-search">
+        <a href=".." class="icon icon-home"> jrnl</a>
+        <div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" title="Type search term here" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../overview/">Overview</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../installation/">Quickstart</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../usage/">Basic Usage</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../encryption/">Encryption</a>
+                    </li>
+                </ul>
+                <ul class="current">
+                    <li class="toctree-l1 current"><a class="reference internal current" href="./">Privacy and Security</a>
+    <ul class="current">
+    <li class="toctree-l2"><a class="reference internal" href="#password-strength">Password strength</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#shell-history">Shell history</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#bash">bash</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#zsh">zsh</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#fish">fish</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#windows-command-prompt">Windows Command Prompt</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#files-in-transit-from-editor-to-jrnl">Files in transit from editor to jrnl</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#plausible-deniability">Plausible deniability</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#notice-any-other-risks">Notice any other risks?</a>
+    </li>
+    </ul>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../formats/">Formats</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../advanced/">Advanced Usage</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../recipes/">Recipes</a>
+                    </li>
+                </ul>
+      </div>
+    </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="..">jrnl</a>
+      </nav>
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="..">Docs</a> &raquo;</li>
+    
+      
+    
+    <li>Privacy and Security</li>
+    <li class="wy-breadcrumbs-aside">
+      
+        <a href="https://github.com/jrnl-org/jrnl/edit/develop/docs/privacy-and-security.md"
+          class="icon icon-github"> Edit on GitHub</a>
+      
+    </li>
+  </ul>
+  
+  <hr/>
+</div>
+          <div role="main">
+            <div class="section">
+              
+                <h1 id="privacy-and-security">Privacy and Security</h1>
+<p><code>jrnl</code> is designed with privacy and security in mind, but like any other
+program there are some limitations to be aware of.</p>
+<h2 id="password-strength">Password strength</h2>
+<p><code>jrnl</code> doesn't enforce password strength requirements. Short or commonly-used
+passwords can be easily circumvented by someone with basic security skills
+to access to your encrypted <code>jrnl</code> file.</p>
+<h2 id="shell-history">Shell history</h2>
+<p>Since you can enter entries from the command line, any tool that logs command
+line actions is a potential security risk. See below for how to deal with this
+problem in various shells.</p>
+<h3 id="bash">bash</h3>
+<p>You can disable history logging for jrnl by adding this line into your
+<code>~/.bashrc</code> file:</p>
+<pre><code class="language-sh">HISTIGNORE=&quot;$HISTIGNORE:jrnl *&quot;
+</code></pre>
+<p>To delete existing <code>jrnl</code> commands from <code>bash</code> history, simply delete them from
+your bash history file. The default location of this file is <code>~/.bash_history</code>,
+but you can run <code>echo "$HISTFILE"</code> to find it if needed.  Also, you can run
+<code>history -c</code> to delete all commands from your history.</p>
+<h3 id="zsh">zsh</h3>
+<p>You can disable history logging for jrnl by adding this to your <code>~/.zshrc</code>
+file:</p>
+<pre><code class="language-sh">setopt HIST_IGNORE_SPACE
+alias jrnl=&quot; jrnl&quot;
+</code></pre>
+<p>To delete existing <code>jrnl</code> commands from <code>zsh</code> history, simply remove them from
+your zsh history file. The default location of this file is <code>~/.zsh_history</code>,
+but you can run <code>echo "$HISTFILE"</code> to find it if needed. Also, you can run
+<code>history -c</code> to delete all commands from your history.</p>
+<h3 id="fish">fish</h3>
+<p>By default <code>fish</code> will not log any command that starts with a space. If you
+want to always run jrnl with a space before it, then you can add this to your
+<code>~/.config/fish/config.fish</code> file:</p>
+<pre><code class="language-sh">abbr --add jrnl &quot; jrnl&quot;
+</code></pre>
+<p>To delete existing jrnl commands from <code>fish</code> history, run <code>history delete --prefix 'jrnl '</code>.</p>
+<h3 id="windows-command-prompt">Windows Command Prompt</h3>
+<p>Windows doesn't log history to disk, but it does keep it in your command prompt
+session. Close the command prompt or press <code>Alt</code>+<code>F7</code> to clear your history
+after journaling.</p>
+<h2 id="files-in-transit-from-editor-to-jrnl">Files in transit from editor to jrnl</h2>
+<p>When creating or editing an entry, <code>jrnl</code> uses a unencrypted temporary file on
+disk in order to give your editor access to your journal. After you close your
+editor, <code>jrnl</code> then deletes this temporary file.</p>
+<p>So, if you have saved a journal entry but haven't closed your editor yet, the
+unencrypted temporary remains on your disk. If your computer were to shut off
+during this time, or the <code>jrnl</code> process were killed unexpectedly, then the
+unencrypted temporary file will remain on your disk. You can mitigate this
+issue by only saving with your editor right before closing it. You can also
+manually delete these files (i.e. files named <code>jrnl_*.txt</code>) from your temporary
+folder.</p>
+<h2 id="plausible-deniability">Plausible deniability</h2>
+<p>You may be able to hide the contents of your journal behind a layer of encryption,
+but if someone has access to your configuration file, then they can figure out that
+you have a journal, where that journal file is, and when you last edited it.
+With a sufficient power imbalance, someone may be able to force you to unencrypt
+it through non-technical means.</p>
+<h2 id="notice-any-other-risks">Notice any other risks?</h2>
+<p>Please let the maintainers know by <a href="https://github.com/jrnl-org/jrnl/issues">filing an issue on GitHub</a>.</p>
+              
+            </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="../formats/" class="btn btn-neutral float-right" title="Formats">Next <span class="icon icon-circle-arrow-right"></span></a>
+      
+      
+        <a href="../encryption/" class="btn btn-neutral" title="Encryption"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+    
+  </div>
+
+  Built with <a href="https://www.mkdocs.org/">MkDocs</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+      
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" aria-label="versions">
+    <span class="rst-current-version" data-toggle="rst-current-version">
+      
+          <a href="https://github.com/jrnl-org/jrnl/" class="fa fa-github" style="float: left; color: #fcfcfc"> GitHub</a>
+      
+      
+        <span><a href="../encryption/" style="color: #fcfcfc;">&laquo; Previous</a></span>
+      
+      
+        <span style="margin-left: 15px"><a href="../formats/" style="color: #fcfcfc">Next &raquo;</a></span>
+      
+    </span>
+</div>
+    <script>var base_url = '..';</script>
+    <script src="../js/theme.js" defer></script>
+      <script src="../search/main.js" defer></script>
+    <script defer>
+        window.onload = function () {
+            SphinxRtdTheme.Navigation.enable(true);
+        };
+    </script>
+
+</body>
+</html>
