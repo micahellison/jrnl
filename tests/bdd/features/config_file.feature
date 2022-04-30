@@ -95,5 +95,6 @@ Feature: Multiple journals
 
     Scenario: Use default config when configuration file is empty or corrupt
         Given the config "empty_file.yaml" exists
+        And we use the config "basic_onefile.yaml"
         When we run "jrnl --cf empty_file.yaml"
         Then the output should contain "empty, now using default config"
